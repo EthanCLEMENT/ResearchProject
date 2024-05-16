@@ -1,11 +1,11 @@
 function simulateControlledPendulum
     % Define parameters
-    c = 0.1;   % Damping coefficient
-    m = 0.3;   % Mass
+    c = 0.5;   % Damping coefficient
+    m = 0.8;   % Mass
     g = 9.81;  % Gravitational acceleration
-    dc = 0.5;  % Distance from pivot to center of mass
-    d1 = 1;    % Distance from pivot to thrust point
-    m_motor = 0.03; % Mass of motor
+    dc = 1;  % Distance from pivot to center of mass
+    d1 = 2;    % Distance from pivot to thrust point
+    m_motor = 0.2; % Mass of motor
     J = 1/3*(m*d1^2) + m_motor*d1^2; % Moment of inertia
     
     % Linearized system matrices A and B
@@ -16,7 +16,7 @@ function simulateControlledPendulum
     equilibrium_angle = 0.12;
 
     % Proportional, Integral, and Derivative gains for the PID controller
-    Kp = 20;
+    Kp = 100;
     Ki = 5;  
     Kd = 2;  
 
